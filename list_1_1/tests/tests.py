@@ -1,4 +1,4 @@
-from src.main import numMembers, generateGroupName, welcomeMessage
+from list_1_1.src.main import numMembers, generateGroupName, welcomeMessage
 
 def test_numMembers():
     test_list = ["Osoba1", "Osoba2"]
