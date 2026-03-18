@@ -2,7 +2,7 @@ import sys
 sys.stdin.reconfigure(encoding='utf-8')
 sys.stdout.reconfigure(encoding='utf-8')
 def longest_no_same_letter():
-    max=-1
+    max_length=-1
     inWord=False
     previous=''
     current=''
@@ -11,10 +11,14 @@ def longest_no_same_letter():
     longestSentence=""
     for line in sys.stdin:
         if line.strip()=="":
+            if max_length<len(sentence) and not check:
+                max_length=len(sentence)
+                longestSentence=sentence
             previous=''
             inWord=False
             sentence=""
             current=''
+            check=False
             continue
         for char in line:
 
@@ -38,8 +42,8 @@ def longest_no_same_letter():
 
                 if char in ".!?":
                     if not check:
-                        if max<len(sentence):
-                            max=len(sentence)
+                        if max_length<len(sentence):
+                            max_length=len(sentence)
                             longestSentence=sentence
                         # print(sentence)
 
