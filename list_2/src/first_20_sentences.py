@@ -7,13 +7,13 @@ def first_20_sentences():
     inWord=False
     for line in sys.stdin:
         if count>=20:
-            continue
+            sys.exit(0)
 
         if line.strip()=="":
             if sentence.strip()!="":
                 count+=1
-                print(sentence.strip())
-
+                print(sentence)
+            print("")
             sentence=""
             inWord=False
             continue
@@ -23,7 +23,7 @@ def first_20_sentences():
                 break
 
             if char=="\n":
-                sentence+=' '
+                sentence+=" "
             else:
                 sentence+=char
             if char.isalpha():
@@ -36,7 +36,7 @@ def first_20_sentences():
                 if char in ".?!":
                     if sentence.strip()!="":
                         count+=1
-                        print(sentence.strip())
+                        sys.stdout.write(sentence)
 
                     sentence=""
                     inWord=False
