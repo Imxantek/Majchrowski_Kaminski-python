@@ -4,6 +4,17 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 def remove_spaces(cleanedLine):
     result = ""
+<<<<<<< HEAD
+    lastCharWasSpace = False
+    for char in cleanedLine:
+        if char.isspace():
+            if not lastCharWasSpace:
+                result+=" "
+                lastCharWasSpace = True
+        else:
+            result+=char
+            lastCharWasSpace = False
+=======
     larstCharWasSpace = False
     for char in cleanedLine:
         if char.isspace():
@@ -13,6 +24,7 @@ def remove_spaces(cleanedLine):
         else:
             result+=char
             larstCharWasSpace = False
+>>>>>>> main
     return result
 
 def main():

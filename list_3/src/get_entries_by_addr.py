@@ -1,0 +1,14 @@
+import ipaddress
+
+def get_entries_by_addr(log, addr):
+    '''IPv4Address(addr) creates an object out of the addr. If not correct it throws a valueExcept'''
+    IPv4_INDEX = 2
+
+    try:
+        ipaddress.IPv4Address(addr)
+    except ValueError:
+        print("This is not a valid IPv4")
+        return []
+    
+    '''List Comprehensions (wyrazenie listowe) - creates a list out of a loop expression'''
+    return [logLine for logLine in log if logLine[IPv4_INDEX] == addr]

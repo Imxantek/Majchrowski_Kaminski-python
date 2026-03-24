@@ -10,6 +10,7 @@ def log_to_dict(log):
         uid=entry_dict['uid']
         sessions[uid].append(entry_dict)
     return dict(sessions)
+
 if __name__=="__main__":
     log=read_log()
     print(log_to_dict(log))

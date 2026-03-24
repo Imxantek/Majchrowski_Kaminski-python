@@ -13,6 +13,7 @@ def entry_to_dict(entry):
         "uri": entry[8],
         "code": entry[9],
     }
+
 if __name__=="__main__":
     log_tuples=read_log()
     log_dicts = [entry_to_dict(e) for e in log_tuples]

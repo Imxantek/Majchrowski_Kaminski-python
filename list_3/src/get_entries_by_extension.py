@@ -1,0 +1,16 @@
+def get_entries_by_extension(log, ext):
+
+    EXTENSION_INDEX = 9
+
+    filtered_logs_by_extension = []
+    for logLine in log:
+
+        uri = logLine[EXTENSION_INDEX]
+        uri_cleared = uri.split('?')[0]
+
+        if uri_cleared.endswith("." + ext):
+            filtered_logs_by_extension.append(logLine)
+    return filtered_logs_by_extension
+
+    # alternative
+    # return [logLine for logLine in log if logLine[EXTENSION_INDEX].split('?')[0].endswith("." + ext)]
