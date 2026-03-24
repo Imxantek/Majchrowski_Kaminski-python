@@ -3,22 +3,22 @@ sys.stdin.reconfigure(encoding='utf-8')
 sys.stdout.reconfigure(encoding='utf-8')
 def longest_no_same_letter():
     max_length=-1
-    inWord=False
     previous=''
     current=''
-    check=False
     sentence=""
     longestSentence=""
+    check=False
+    inWord=False
     for line in sys.stdin:
         if line.strip()=="":
             if max_length<len(sentence) and not check:
                 max_length=len(sentence)
                 longestSentence=sentence
             previous=''
-            inWord=False
-            sentence=""
             current=''
+            sentence=""
             check=False
+            inWord=False
             continue
         for char in line:
 
@@ -48,8 +48,8 @@ def longest_no_same_letter():
                         # print(sentence)
 
                     previous=''
-                    sentence=""
                     current=''
+                    sentence=""
                     check=False
     print("\nLongest sentence with no 2 neighboring words having the same starting letter:\n")
     print(f"\"{longestSentence}\"")
