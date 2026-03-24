@@ -4,15 +4,15 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 def remove_spaces(cleanedLine):
     result = ""
-    last_char_was_space = False
+    lastCharWasSpace = False
     for char in cleanedLine:
         if char.isspace():
-            if not last_char_was_space:
+            if not lastCharWasSpace:
                 result+=" "
-                last_char_was_space = True
+                lastCharWasSpace = True
         else:
             result+=char
-            last_char_was_space = False
+            lastCharWasSpace = False
     return result
 
 def main():
