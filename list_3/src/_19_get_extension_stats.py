@@ -1,8 +1,7 @@
 import sys
 from collections import defaultdict
+from _1_read_log import read_log
 
-from read_log import read_log
-from log_to_dict import log_to_dict
 def get_extension_stats(log):
     result=defaultdict(int)
     for log_entry in log:
@@ -18,6 +17,7 @@ def get_extension_stats(log):
             continue
         result[extension.lower()] += 1
     return dict(result)
+    
 if __name__=="__main__":
     log=read_log()
     print(get_extension_stats(log))

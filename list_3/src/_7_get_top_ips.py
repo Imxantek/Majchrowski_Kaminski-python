@@ -1,7 +1,7 @@
 import sys
 from collections import defaultdict
 
-import read_log
+import _1_read_log
 def get_top_ips(log, n=10):
     hm=defaultdict(int)
     for log_entry in log:
@@ -14,8 +14,9 @@ def get_top_ips(log, n=10):
     for ip in top_ips[:n]:
         result.append((ip, hm[ip]))
     return result
+
 if __name__=="__main__":
-    log=read_log.read_log()
+    log=_1_read_log.read_log()
     if len(sys.argv)==2:
         n=int(sys.argv[1])
         print(get_top_ips(log, n))

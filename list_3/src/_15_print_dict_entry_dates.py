@@ -1,8 +1,7 @@
 import sys
 from collections import defaultdict
-from log_to_dict import log_to_dict
-from read_log import read_log
-from entry_to_dict import entry_to_dict
+from _14_log_to_dict import log_to_dict
+from _1_read_log import read_log
 def print_dict_entry_dates(log_dict):
     for uid in log_dict:
         ip_set: set = set()
