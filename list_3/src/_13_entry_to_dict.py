@@ -1,5 +1,4 @@
-import sys
-from read_log import read_log
+from _1_read_log import read_log
 def entry_to_dict(entry):
     return{
         "ts": entry[0],

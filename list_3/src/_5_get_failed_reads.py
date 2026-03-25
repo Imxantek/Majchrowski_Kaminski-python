@@ -1,5 +1,5 @@
 import sys
-import read_log
+import _1_read_log
 def get_failed_reads(log, merge=False):
     res4=[]
     res5=[]
@@ -13,7 +13,7 @@ def get_failed_reads(log, merge=False):
     else:
         return res4, res5
 if __name__=="__main__":
-    log=read_log.read_log()
+    log=_1_read_log.read_log()
     if len(sys.argv)<2:
         merge=bool(sys.argv[1])
         print(get_failed_reads(log, merge))

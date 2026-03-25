@@ -1,5 +1,6 @@
 import datetime
 import sys
+
 def read_log():
     result=[]
     for line in sys.stdin:
@@ -27,6 +28,7 @@ def read_log():
                 continue
             result.append((ts, uid, id_orig_h, id_orig_p, id_resp_h, id_resp_p, method, host, uri, code))
     return result
+
 if __name__ == '__main__':
     result=read_log()
     print(result)
