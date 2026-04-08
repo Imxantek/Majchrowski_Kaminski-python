@@ -1,8 +1,9 @@
 import os
 import sys
+
 def get_env_data(lst: list = None):
 
-    env = dict(os.environ)
+    env = dict(os.environ) # tu sa zmienne srodowiskowe z systemu
     res = []
 
     if lst is None:
