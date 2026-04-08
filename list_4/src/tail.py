@@ -28,6 +28,7 @@ def tail():
         except FileNotFoundError:
             print("File not found")
             return
+        
     # sprawdzamy czy argument jest pipem
     elif not sys.stdin.isatty():
         input_source=sys.stdin
