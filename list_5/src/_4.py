@@ -6,8 +6,10 @@ def parse_names(string: str) -> str:
     result=string
     polish="ąćęłńóśźżĄĆĘŁŃÓŚŹŻ "
     english="acelnoszzACELNOSZZ_"
+
     for i in range(len(polish)):
         result=re.sub(polish[i],english[i],result)
+
     return result
 
 def print_file(path="../data/stacje.csv"):
